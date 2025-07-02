@@ -1,72 +1,126 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "lint": "next lint",
-    "start": "next start"
+  "name": "code-translator",
+  "displayName": "Code Translator",
+  "description": "Real-time translation of non-English terms in code with IntelliSense-like interface",
+  "version": "1.0.0",
+  "publisher": "your-actual-publisher-name",
+  "engines": {
+    "vscode": "^1.74.0",
+    "node": ">=18.0.0"
   },
-  "dependencies": {
-    "@hookform/resolvers": "^3.9.1",
-    "@radix-ui/react-accordion": "1.2.2",
-    "@radix-ui/react-alert-dialog": "1.1.4",
-    "@radix-ui/react-aspect-ratio": "1.1.1",
-    "@radix-ui/react-avatar": "1.1.2",
-    "@radix-ui/react-checkbox": "1.1.3",
-    "@radix-ui/react-collapsible": "1.1.2",
-    "@radix-ui/react-context-menu": "2.2.4",
-    "@radix-ui/react-dialog": "1.1.4",
-    "@radix-ui/react-dropdown-menu": "2.1.4",
-    "@radix-ui/react-hover-card": "1.1.4",
-    "@radix-ui/react-label": "2.1.1",
-    "@radix-ui/react-menubar": "1.1.4",
-    "@radix-ui/react-navigation-menu": "1.2.3",
-    "@radix-ui/react-popover": "1.1.4",
-    "@radix-ui/react-progress": "1.1.1",
-    "@radix-ui/react-radio-group": "1.2.2",
-    "@radix-ui/react-scroll-area": "1.2.2",
-    "@radix-ui/react-select": "2.1.4",
-    "@radix-ui/react-separator": "1.1.1",
-    "@radix-ui/react-slider": "1.2.2",
-    "@radix-ui/react-slot": "1.1.1",
-    "@radix-ui/react-switch": "1.1.2",
-    "@radix-ui/react-tabs": "1.1.2",
-    "@radix-ui/react-toast": "1.2.4",
-    "@radix-ui/react-toggle": "1.1.1",
-    "@radix-ui/react-toggle-group": "1.1.1",
-    "@radix-ui/react-tooltip": "1.1.6",
-    "autoprefixer": "^10.4.20",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "cmdk": "1.0.4",
-    "date-fns": "4.1.0",
-    "embla-carousel-react": "8.5.1",
-    "input-otp": "1.4.1",
-    "lucide-react": "^0.454.0",
-    "next": "15.2.4",
-    "next-themes": "^0.4.4",
-    "react": "^19",
-    "react-day-picker": "8.10.1",
-    "react-dom": "^19",
-    "react-hook-form": "^7.54.1",
-    "react-resizable-panels": "^2.1.7",
-    "recharts": "2.15.0",
-    "sonner": "^1.7.1",
-    "tailwind-merge": "^2.5.5",
-    "tailwindcss-animate": "^1.0.7",
-    "vaul": "^0.9.6",
-    "vscode": "^1.1.34",
-    "zod": "^3.24.1"
+  "categories": ["Other", "Language Packs"],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codeTranslator.toggle",
+        "title": "Toggle Code Translator",
+        "category": "Code Translator"
+      },
+      {
+        "command": "codeTranslator.configure",
+        "title": "Configure Languages",
+        "category": "Code Translator"
+      },
+      {
+        "command": "codeTranslator.clearCache",
+        "title": "Clear Translation Cache",
+        "category": "Code Translator"
+      }
+    ],
+    "configuration": {
+      "title": "Code Translator",
+      "properties": {
+        "codeTranslator.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable the Code Translator extension"
+        },
+        "codeTranslator.sourceLanguages": {
+          "type": "array",
+          "default": ["auto"],
+          "description": "Source languages to detect and translate from",
+          "items": {
+            "type": "string"
+          }
+        },
+        "codeTranslator.targetLanguage": {
+          "type": "string",
+          "default": "en",
+          "description": "Target language for translations"
+        },
+        "codeTranslator.translateComments": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable translation of comments"
+        },
+        "codeTranslator.translateStrings": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable translation of string literals"
+        },
+        "codeTranslator.translateIdentifiers": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable translation of variable/function names"
+        },
+        "codeTranslator.minWordLength": {
+          "type": "number",
+          "default": 3,
+          "description": "Minimum word length to translate"
+        },
+        "codeTranslator.hoverDelay": {
+          "type": "number",
+          "default": 500,
+          "description": "Delay in milliseconds before showing translation on hover"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "codeTranslator.toggle",
+        "key": "ctrl+shift+t",
+        "mac": "cmd+shift+t"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package"
   },
   "devDependencies": {
-    "@types/node": "^22",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "postcss": "^8.5",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^5"
+    "@types/vscode": "^1.74.0",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "eslint": "^8.47.0",
+    "typescript": "^5.1.6",
+    "@vscode/test-electron": "^2.3.4",
+    "@vscode/vsce": "^2.19.0"
   },
-  "engines": {"vscode": "^1.70.0"}
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/code-translator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/code-translator/issues"
+  },
+  "homepage": "https://github.com/your-username/code-translator#readme",
+  "license": "MIT",
+  "keywords": ["translation", "code", "multilingual", "intellisense", "dutch", "spanish", "programming"],
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "extensionKind": ["ui", "workspace"]
 }
