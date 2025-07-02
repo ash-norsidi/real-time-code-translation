@@ -124,4 +124,4 @@ MIT License - see LICENSE file for details
 
 ## Support
 
-For issues and feature requests, please visit our [GitHub repository](https://github.com/ash-norsidi/code-translator).
+For issues and feature requests, please visit our [GitHub repository](https://github.com/ash-norsidi/real-time-code-translation).
