@@ -1,4 +1,4 @@
-# Code Translator Extension
+# Code Translator Extension (Made with Vercel)
 
 A Visual Studio Code extension that provides real-time translation of non-English terms within the code editor, similar to IntelliSense functionality.
 
