@@ -2,7 +2,7 @@
   "name": "code-translator",
   "displayName": "Code Translator",
   "description": "Real-time translation of non-English terms in code with IntelliSense-like interface",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "publisher": "your-actual-publisher-name",
   "engines": {
     "vscode": "^1.74.0",
