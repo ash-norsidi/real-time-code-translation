@@ -68,5 +68,5 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
   },
-  "engines": {"vscode": "{version_range}"}
+  "engines": {"vscode": "^1.70.0"}
 }
