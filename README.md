@@ -1,4 +1,4 @@
-# Code Translator Extension (Made with Vercel)
+# Code Translator Extension
 
 A Visual Studio Code extension that provides real-time translation of non-English terms within the code editor, similar to IntelliSense functionality.
 
@@ -57,6 +57,7 @@ Access settings via:
 - Spanish
 - French
 - German
+- Dutch
 - Italian
 - Portuguese
 - Russian
@@ -124,4 +125,4 @@ MIT License - see LICENSE file for details
 
 ## Support
 
-For issues and feature requests, please visit our [GitHub repository](https://github.com/ash-norsidi/real-time-code-translation).
+For issues and feature requests, please visit our [GitHub repository](https://github.com/ash-norsidi/code-translator).

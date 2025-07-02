@@ -97,6 +97,7 @@ async function showLanguageConfiguration() {
     { label: "Spanish", value: "es" },
     { label: "French", value: "fr" },
     { label: "German", value: "de" },
+    { label: "Dutch", value: "nl" },
     { label: "Italian", value: "it" },
     { label: "Portuguese", value: "pt" },
     { label: "Russian", value: "ru" },

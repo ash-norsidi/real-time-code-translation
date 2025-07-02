@@ -38,6 +38,7 @@ export class TranslationProvider {
   private async mockTranslate(text: string, targetLang: string, sourceLang: string): Promise<TranslationResult> {
     // Mock translation service - replace with actual API calls
     const mockTranslations: { [key: string]: string } = {
+      // Spanish translations
       hola: "hello",
       mundo: "world",
       función: "function",
@@ -59,9 +60,49 @@ export class TranslationProvider {
       retornar: "return",
       importar: "import",
       exportar: "export",
+
+      // Dutch translations
+      hallo: "hello",
+      wereld: "world",
+      functie: "function",
+      variabele: "variable",
+      klasse: "class",
+      methode: "method",
+      opmerking: "comment",
+      tekst: "string",
+      getal: "number",
+      boolean: "boolean",
+      waar: "true",
+      onwaar: "false",
+      als: "if",
+      dan: "then",
+      anders: "else",
+      voor: "for",
+      terwijl: "while",
+      doen: "do",
+      teruggeven: "return",
+      importeren: "import",
+      exporteren: "export",
       const: "const",
       let: "let",
       var: "var",
+      nieuw: "new",
+      deze: "this",
+      super: "super",
+      proberen: "try",
+      vangen: "catch",
+      eindelijk: "finally",
+      gooien: "throw",
+      schakelaar: "switch",
+      geval: "case",
+      standaard: "default",
+      breken: "break",
+      doorgaan: "continue",
+      lus: "loop",
+      array: "array",
+      object: "object",
+      null: "null",
+      ongedefinieerd: "undefined",
     }
 
     const lowerText = text.toLowerCase()
@@ -70,10 +111,52 @@ export class TranslationProvider {
     return {
       originalText: text,
       translatedText: translated,
-      sourceLanguage: sourceLang === "auto" ? "es" : sourceLang,
+      sourceLanguage: sourceLang === "auto" ? this.detectSourceLanguage(text) : sourceLang,
       targetLanguage: targetLang,
       confidence: translated !== text ? 0.9 : 0.1,
     }
+  }
+
+  private detectSourceLanguage(text: string): string {
+    const lowerText = text.toLowerCase()
+
+    // Dutch indicators
+    const dutchWords = [
+      "functie",
+      "variabele",
+      "klasse",
+      "methode",
+      "als",
+      "dan",
+      "anders",
+      "voor",
+      "terwijl",
+      "waar",
+      "onwaar",
+    ]
+    if (dutchWords.some((word) => lowerText.includes(word))) {
+      return "nl"
+    }
+
+    // Spanish indicators
+    const spanishWords = [
+      "función",
+      "variable",
+      "clase",
+      "método",
+      "si",
+      "entonces",
+      "sino",
+      "para",
+      "mientras",
+      "verdadero",
+      "falso",
+    ]
+    if (spanishWords.some((word) => lowerText.includes(word))) {
+      return "es"
+    }
+
+    return "auto"
   }
 
   private addToCache(key: string, result: TranslationResult) {
