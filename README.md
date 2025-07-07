@@ -141,7 +141,7 @@ See [CHANGELOG.md](CHANGELOG.md) for a list of changes and version history.
 ---
 
 **Enjoy coding in multiple languages!** 🌍✨
-\`\`\`
+
 
 ```text file="LICENSE"
 MIT License
