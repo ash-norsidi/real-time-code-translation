@@ -6,8 +6,6 @@
 
 A Visual Studio Code extension that provides real-time translation of non-English terms within the code editor, similar to IntelliSense functionality.
 
-![Code Translator Demo](https://via.placeholder.com/800x400/007ACC/FFFFFF?text=Code+Translator+Demo)
-
 ## ✨ Features
 
 - **🔄 Real-time Translation**: Hover over non-English words to see instant translations
