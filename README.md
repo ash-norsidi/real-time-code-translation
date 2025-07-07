@@ -27,13 +27,13 @@ A Visual Studio Code extension that provides real-time translation of non-Englis
 ### Basic Translation
 Simply hover over any non-English word in your code to see its translation:
 
-\`\`\`javascript
+```javascript
 // Spanish code example
 function calcularPrecio(precio, impuesto) {
     // Hover over 'calcularPrecio', 'precio', 'impuesto' to see translations
     return precio * (1 + impuesto);
 }
-\`\`\`
+```
 
 ### Configuration
 Access settings via:
