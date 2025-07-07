@@ -89,15 +89,15 @@ JavaScript, TypeScript, Python, Java, C#, C/C++, Go, Rust, PHP, Ruby, Swift, Kot
 - VS Code 1.74+
 
 ### Setup
-\`\`\`bash
+```bash
 git clone https://github.com/your-username/code-translator.git
 cd code-translator
 npm install
 npm run compile
-\`\`\`
+```
 
 ### Testing
-\`\`\`bash
+```
 # Run tests
 npm test
 
@@ -106,7 +106,7 @@ npm run package
 
 # Install locally
 code --install-extension code-translator-1.0.0.vsix
-\`\`\`
+```
 
 ## 🤝 Contributing
 
