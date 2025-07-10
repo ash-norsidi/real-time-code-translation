@@ -5,6 +5,7 @@
 [![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/REPLACE-WITH-YOUR-PUBLISHER-ID.code-translator)](https://marketplace.visualstudio.com/items?itemName=REPLACE-WITH-YOUR-PUBLISHER-ID.code-translator)
 
 A Visual Studio Code extension that provides real-time translation of non-English terms within the code editor, similar to IntelliSense functionality.
+(Made with v0)
 
 ## ✨ Features
 
