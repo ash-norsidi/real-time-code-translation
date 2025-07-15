@@ -2,7 +2,7 @@
 
 All notable changes to the "code-translator" extension will be documented in this file.
 
-## [1.0.0] - 2024-01-01
+## [1.0.0] - 2025-07-01
 
 ### Added
 - Initial release of Code Translator extension
