@@ -146,7 +146,7 @@ See [CHANGELOG.md](CHANGELOG.md) for a list of changes and version history.
 ```text file="LICENSE"
 MIT License
 
-Copyright (c) 2024 Code Translator Extension
+Copyright (c) 2025 Code Translator Extension
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
